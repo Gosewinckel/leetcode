@@ -6,13 +6,13 @@ class Solution {
 	public:
 		std::vector<int> twoSum(std::vector<int>& nums, int target) {
 			std::unordered_map<int, int> indexMap;
-			std::vector<int> output;
+			std::vector<int> output(2);
 			for(int i = 0; i < nums.size(); ++i) {
 				int comp = target - nums[i];
 				// if found
 				if(indexMap.count(comp) != 0) {
-					output.push_back(indexMap[comp]);
-					output.push_back(i);
+					output[0] = indexMap[comp];
+					output[1] = i;
 					return output;
 				}
 				//if not found
